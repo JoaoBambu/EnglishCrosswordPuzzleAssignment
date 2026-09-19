@@ -1,5 +1,3 @@
--- Created by Abadi
-
 CREATE TABLE IF NOT EXISTS words (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     public_id TEXT NOT NULL UNIQUE,
@@ -76,9 +74,9 @@ CREATE TABLE IF NOT EXISTS web_browser_sessions_data (
     public_id TEXT NOT NULL UNIQUE,
     
     web_browser_sessions_id INTEGER NOT NULL UNIQUE,
-    acumuled_points INTEGER NOT NULL,
     session_name TEXT NOT NULL,
-
+    acumuled_points INTEGER NOT NULL,
+    
     FOREIGN KEY(web_browser_sessions_id)
         REFERENCES web_browser_sessions(id)
 );
@@ -109,9 +107,4 @@ ON web_browser_sessions(expires_at);
 CREATE INDEX idx_sessions_data_session_id
 ON web_browser_sessions_data(web_browser_sessions_id);
 
-
-
-
-
-
-
+-- by Abadi
